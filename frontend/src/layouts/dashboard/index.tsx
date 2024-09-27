@@ -10,11 +10,11 @@ export const DashboardLayout = () => {
     return (
         <>
             {modal_state == true ? <Modal content={modal_content} /> : null}
-            <div className="h-full grid grid-cols-14">
+            <div className="h-full grid grid-cols-16">
                 <div className="col-span-2 border-r">
                     <SideNav />
                 </div>
-                <div className="col-span-12">
+                <div className="col-span-14">
                     <Outlet />
                 </div>
             </div>

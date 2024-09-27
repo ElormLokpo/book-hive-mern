@@ -36,7 +36,7 @@ export const AddCategories = () => {
         })
     }
 
-    const handleDone = ()=>{
+    const handleDone = () => {
         console.log(Array.from(categoriesSet))
         toast.success("Categories added")
     }
@@ -48,7 +48,7 @@ export const AddCategories = () => {
             <div className="mb-2">
                 <label className="text-[0.6rem]">Categories:</label>
                 <div className="flex gap-2">
-                    <select className="w-full text-xs border outline-none rounded px-1 py-1.5 text-gray-700" onChange={(e:React.ChangeEvent<HTMLSelectElement>)=>setCurrentCategory(e.target.value)}>
+                    <select className="w-full text-xs border outline-none rounded px-1 py-1.5 text-gray-700" onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setCurrentCategory(e.target.value)}>
                         {
                             Object.values(BookCategoryEnum).map((item, index) => <option key={index} value={item}>{item}</option>)
                         }
@@ -66,6 +66,19 @@ export const AddCategories = () => {
                 }
 
             </div>
+        </div>
+    )
+}
+
+
+
+export const DisplayCategories = () => {
+    return (
+        <div className="grid grid-cols-4 gap-1">
+            {
+                ["Romance", "Fiction", "Educational", "Documentary"].map((item, index) => <p className="text-[0.6rem] border rounded-full px-2 flex items-center justify-center" key={index}>{item}</p>)
+            }
+
         </div>
     )
 }
