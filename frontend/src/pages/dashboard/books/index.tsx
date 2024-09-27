@@ -5,12 +5,14 @@ import { SearchInput } from "@/components/input";
 import { useContext } from "react";
 import { IModalContext } from "@/context/modal-context/types";
 import { ModalContext } from "@/context/modal-context";
+import { AddBook } from "./components/add-book";
 
 export const BookPage = () => {
-    const {SetModalState} = useContext(ModalContext) as IModalContext
+    const {SetModalState, SetModalContent} = useContext(ModalContext) as IModalContext
 
     const handleAddBook = ()=>{
         SetModalState(true)
+        SetModalContent(<AddBook />)
     }
 
     return (
