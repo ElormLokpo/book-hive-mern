@@ -4,4 +4,6 @@ export interface IProps{
     type?:string,
     isError?:boolean,
     style_type?:string,
+    inputChange : (key:any, value:any)=>void,
+    name:string
 }

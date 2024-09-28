@@ -5,7 +5,7 @@ import { ModalContext } from "@/context/modal-context";
 import { IModalContext } from "@/context/modal-context/types";
 
 
-export const Button = ({ content, handler, style_type, icon }: IProps) => {
+export const Button = ({ content, handler, style_type, icon, isLoading, loading_text }: IProps) => {
     let btn_style;
     let def_style_sm = "text-xs border flex gap-1 items-center bg-gray-900 hover:bg-gray-700 text-white py-1.5 px-3 rounded"
     let auth_style = "text-xs w-full flex justify-center items-center border flex gap-1 items-center bg-gray-900 hover:bg-gray-700 text-white py-2.5 px-3 rounded"
@@ -20,7 +20,7 @@ export const Button = ({ content, handler, style_type, icon }: IProps) => {
         default:
             btn_style = def_style_sm;
     }
-    return <button className={btn_style} onClick={handler}>{icon && icon}{content}</button>
+    return <button className={btn_style} onClick={handler}>{icon || isLoading == false && icon}{ isLoading ? loading_text : content}</button>
 }
 
 
