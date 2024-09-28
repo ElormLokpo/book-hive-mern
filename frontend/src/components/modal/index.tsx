@@ -19,10 +19,21 @@ export const Modal = ({ content }: { content: ReactElement }) => {
     )
 }
 
-export const DeleteModal = () => {
+export const DeleteModal = ({text, deleteHandler}:{text:string, deleteHandler:()=>void}) => {
+    const {SetModalState} = useContext(ModalContext) as IModalContext
+    
     const handleClickForm = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.stopPropagation()
     }
+
+    const handleDelete = ()=>{
+        deleteHandler()
+    }
+
+    const handleClose = ()=>{
+        SetModalState(false)
+    }
+
     return (
         <m.div
             variants={SlideInTop}
@@ -38,11 +49,11 @@ export const DeleteModal = () => {
             </div>
 
             <div className="mb-3">
-                <p className="text-sm">Are you sure you want to delete?</p>
+                <p className="text-sm">{text}</p>
             </div>
             <div className="flex gap-2">
-                <button className="text-xs hover:bg-gray-50 border-red-500 text-red-400 border p-1 rounded">Delete</button>
-                <button className="text-xs hover:bg-gray-50 border-gray-600 text-gray-600 border p-1 rounded">Cancel</button>
+                <button onClick={handleDelete} className="text-xs hover:bg-gray-50 border-red-500 text-red-400 border p-1 rounded">Delete</button>
+                <button onClick={handleClose} className="text-xs hover:bg-gray-50 border-gray-600 text-gray-600 border p-1 rounded">Cancel</button>
             </div>
         </m.div>
     )

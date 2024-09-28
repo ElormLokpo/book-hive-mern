@@ -18,6 +18,7 @@ export interface IBookReduxState{
 }
 
 export interface IBookRequest{
+  _id?:string,
   title:string, 
   author?:string, 
   isbn?:string, 

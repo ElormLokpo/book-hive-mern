@@ -1,13 +1,38 @@
 import { SlideInTop } from "@/animations"
 import { Button, ModalCloseButton } from "@/components/button"
-
+import { IBookRequest } from "@/services/api-types/book.types"
+import { useUpdateBookMutation } from "@/services/api/book"
 import { motion as m } from "framer-motion"
+import { useEffect, useState } from "react"
+import { toast } from "sonner"
 
 
-export const EditBook = () => {
+export const EditBook = ({ row }: { row: any }) => {
+    let input_style = "w-full border rounded text-xs px-1 py-1.5 outline-none text-gray-800"
+    const [bookData, setBookData] = useState<IBookRequest>()
+    const [UpdateBook, {isLoading}] = useUpdateBookMutation();
+    useEffect(() => {
 
+        setBookData(row as IBookRequest)
+    }, [row])
     const handleClickForm = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.stopPropagation()
+    }
+
+    const handleInputChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
+        setBookData((prev:any)=>{
+            return {...prev, [e.target.name]: e.target.value }
+        })
+    }
+
+    const handleEditSubmit = async()=>{
+        console.log(bookData?._id)
+        let response = await UpdateBook({id:bookData?._id,data:bookData})
+        if(response.data?.success == true){
+            location.reload();
+        }else{
+            toast.error(response.data?.message)
+        }
     }
 
     return (
@@ -27,37 +52,39 @@ export const EditBook = () => {
 
             <div className="mb-4">
                 <div className="mb-1">
-                    <EditInput value={"Ananse The Jack"} label="Book title:" />
+                    <div>
+                        <label className="text-[0.6rem]">Book Title:</label>
+                        <input onChange={handleInputChange} type="text" name="title" value={bookData?.title} className={input_style} />
+                    </div>
+
                 </div>
 
                 <div className="mb-1 grid grid-cols-2 gap-2">
-                    <EditInput value={"Justice Bediako"} label="Book Author:" />
-                    <EditInput value={"970-345-223"} label="ISBN:" />
+                    <div>
+                        <label className="text-[0.6rem]">Book Author:</label>
+                        <input onChange={handleInputChange} type="text" name="author" value={bookData?.author} className={input_style} />
+                    </div>
+                    <div>
+                        <label className="text-[0.6rem]">Isbn:</label>
+                        <input onChange={handleInputChange} type="text"name="isbn" value={bookData?.isbn} className={input_style} />
+                    </div>
+
                 </div>
 
                 <div className="mb-1">
-                    <EditInput value={44} label="Copies:" type="number" />
-
+                    <div>
+                        <label className="text-[0.6rem]">Copies:</label>
+                        <input onChange={handleInputChange} type="number" name="total_copies" value={bookData?.total_copies} className={input_style} />
+                    </div>
                 </div>
 
             </div>
 
             <div>
-                <Button content="Edit Book" handler={() => { }} />
+                <Button content="Edit Book" handler={handleEditSubmit} />
             </div>
         </m.div>
     )
 }
 
 
-
-export const EditInput = ({ label, type, value }: { label: string, type?: string, value: any }) => {
-
-    let input_style = "w-full border rounded text-xs px-1 py-1.5 outline-none text-gray-800"
-
-
-    return <div>
-        <label className="text-[0.6rem]">{label}</label>
-        <input type={type ? type : "text"} value={value} className={input_style} />
-    </div>
-}
