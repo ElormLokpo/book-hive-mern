@@ -8,6 +8,10 @@ import {createBrowserRouter, RouteObject} from "react-router-dom";
 
 let all_routes:RouteObject[] = [
     {
+        path:"",
+        element:<AuthPage />
+    },
+    {
         path:"/admin/auth",
         element:<AuthPage />
     },

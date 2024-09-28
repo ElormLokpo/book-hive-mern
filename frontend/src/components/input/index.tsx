@@ -1,14 +1,18 @@
 import { CiSearch } from "react-icons/ci";
 import { IProps } from "./types";
 
-export const Input = ({ label, placeholder, type, isError, style_type }: IProps) => {
+export const Input = ({ label, placeholder, type, isError, style_type, name, inputChange }: IProps) => {
     let input_style;
     let def_style_sm = "w-full border rounded text-xs px-1 py-1.5 outline-none text-gray-800"
     input_style = def_style_sm
 
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
+        inputChange(e.target.name, e.target.value)
+    }
+
     return <div>
         <label className="text-[0.6rem]">{label}</label>
-        <input type={type ? type : "text"} placeholder={placeholder} className={input_style} />
+        <input name={name} type={type ? type : "text"} placeholder={placeholder} className={input_style} onChange={handleChange} />
     </div>
 }
 

@@ -16,7 +16,7 @@ export const CategoryItem = ({ category, handleClick }: { category: string, hand
     )
 }
 
-export const AddCategories = () => {
+export const AddCategories = ({setCategoriesArr}:{setCategoriesArr:(arr:string[])=>void}) => {
     const [currentCategory, setCurrentCategory] = useState<string>(Object.values(BookCategoryEnum)[0])
     const [categoriesSet, setCategoriesSet] = useState<Set<string>>(new Set())
 
@@ -37,7 +37,7 @@ export const AddCategories = () => {
     }
 
     const handleDone = () => {
-        console.log(Array.from(categoriesSet))
+        setCategoriesArr(Array.from(categoriesSet))
         toast.success("Categories added")
     }
 
@@ -72,11 +72,11 @@ export const AddCategories = () => {
 
 
 
-export const DisplayCategories = () => {
+export const DisplayCategories = ({categories}:{categories:string[]}) => {
     return (
         <div className="grid grid-cols-4 gap-1">
             {
-                ["Romance", "Fiction", "Educational", "Documentary"].map((item, index) => <p className="text-[0.6rem] border rounded-full px-2 flex items-center justify-center" key={index}>{item}</p>)
+                categories.map((item, index) => <p className="text-[0.6rem] border rounded-full px-2 flex items-center justify-center" key={index}>{item}</p>)
             }
 
         </div>

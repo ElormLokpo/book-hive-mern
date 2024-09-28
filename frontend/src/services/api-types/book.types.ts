@@ -11,3 +11,17 @@ export enum BookCategoryEnum {
     Art = "Art",
   }
   
+export interface IBookReduxState{
+  value:{
+      all_books: any[]
+  }
+}
+
+export interface IBookRequest{
+  title:string, 
+  author?:string, 
+  isbn?:string, 
+  location?:string, 
+  total_copies?: number,
+  categories?: string[]
+}

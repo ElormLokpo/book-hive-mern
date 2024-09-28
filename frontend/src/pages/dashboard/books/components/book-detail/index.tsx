@@ -5,7 +5,7 @@ import { motion as m } from "framer-motion"
 import { DisplayCategories } from "../category"
 
 
-export const BookDetail = () => {
+export const BookDetail = ({row}:{row:any}) => {
     let p_style = "w-full border rounded text-xs px-1 py-1 outline-none text-gray-800"
 
     const handleClickForm = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -31,47 +31,48 @@ export const BookDetail = () => {
                 <div className="mb-2">
                     <div>
                         <p className="text-[0.6rem]">Book Title:</p>
-                        <p className={p_style}> Ananse The Jack </p>
+                        <p className={p_style}> {row.title} </p>
                     </div>
                 </div>
 
                 <div className="mb-2 grid grid-cols-2 gap-2">
                     <div>
                         <p className="text-[0.6rem]">Author:</p>
-                        <p className={p_style}> Justice Bediako</p>
+                        <p className={p_style}> {row.author}</p>
                     </div>
                     <div>
                         <p className="text-[0.6rem]">ISBN:</p>
-                        <p className={p_style}> 970-345-223 </p>
+                        <p className={p_style}> {row.isbn} </p>
                     </div>
                 </div>
 
                 <div className="mb-3">
                     <div>
                         <p className="text-[0.6rem]">Location:</p>
-                        <p className={p_style}> Row 37, Isle () </p>
+                        <p className={p_style}> {row.location} </p>
                     </div>
                 </div>
 
                 <div className="mb-2 grid grid-cols-3 gap-2">
                     <div>
                         <p className="text-[0.6rem]">Total Copies:</p>
-                        <p className={p_style}> 65</p>
-                    </div>
-                    <div>
-                        <p className="text-[0.6rem]">Current Copies:</p>
-                        <p className={p_style}> 97 </p>
+                        <p className={p_style}> {row.total_copies}</p>
                     </div>
                     <div>
                         <p className="text-[0.6rem]">Copies Borrowed:</p>
-                        <p className={p_style}> 23 </p>
+                        <p className={p_style}> {row.copies_borrowed } </p>
                     </div>
+                    <div>
+                        <p className="text-[0.6rem]">Current Copies:</p>
+                        <p className={p_style}>{row.current_copies ? row.current_copies : 0}</p>
+                    </div>
+                   
 
                 </div>
 
                 <div className="mb-2">
                     <p className="text-[0.6rem] mb-1">Categories:</p>
-                    <DisplayCategories />
+                    <DisplayCategories categories={row.categories} />
                 </div>
 
             </div>
