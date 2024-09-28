@@ -3,12 +3,12 @@ import { IProps } from "./types"
 
 export const Table = ({ headers, body }: IProps) => {
     return (
-        <div>
-            <table className="border rounded text-xs w-full">
+        <div className="rounded-lg border border-stone-700 shadow overflow-hidden">
+            <table className=" rounded text-xs w-full">
                 <thead>
-                    <tr className="border-b">
+                    <tr className="border-b border-stone-700">
                         {
-                            headers.map((item, index) => <td className="py-2 px-2 font-semibold bg-gray-50 border-l" key={index}>{item}</td>)
+                            headers.map((item, index) => <td className="py-2 px-2 font-semibold bg-stone-800" key={index}>{item}</td>)
                         }
                     </tr>
                 </thead>

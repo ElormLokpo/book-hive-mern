@@ -12,7 +12,7 @@ import { toast } from "sonner"
 
 export const InitiateBorrowRecord = ({ row }: { row: any }) => {
     const [borrowRecordData, setBorrowRecordData] = useState<IBorrowRecordRequest>()
-    let input_style = "w-full border rounded text-xs px-1 py-1.5 outline-none text-gray-800"
+    let input_style = "w-full border bg-stone-800 border-stone-700 rounded text-xs px-1 py-1.5 outline-none text-stone-300"
     const [bookTitle, setBookTitle] = useState()
     const [AddBorrowRecord, { isLoading }] = useAddBorrowRecordMutation()
 
@@ -58,7 +58,7 @@ export const InitiateBorrowRecord = ({ row }: { row: any }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="bg-white rounded p-3 w-[30rem]"
+            className="bg-black border-stone-700 border text-stone-300 rounded p-3 w-[30rem]"
             onClick={(e) => handleClickForm(e)}
         >
             <div className="flex justify-between mb-2">

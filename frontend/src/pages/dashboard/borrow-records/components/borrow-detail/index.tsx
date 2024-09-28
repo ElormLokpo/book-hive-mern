@@ -13,7 +13,7 @@ export const BorrowRecordDetail = ({ row }: { row: any }) => {
         setBorrowRecord(row);
         console.log(row)
     }, [row])
-    let p_style = "w-full border rounded text-xs px-1 py-1 outline-none text-gray-800"
+    let p_style = "w-full border bg-stone-800 border-stone-700 rounded text-xs px-1 py-1 outline-none text-stone-300"
 
     const handleClickForm = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.stopPropagation()
@@ -25,7 +25,7 @@ export const BorrowRecordDetail = ({ row }: { row: any }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="bg-white rounded p-3 w-[30rem]"
+            className="bg-black border border-stone-700 text-stone-300 rounded p-3 w-[30rem]"
             onClick={(e) => handleClickForm(e)}
         >
             <div className="flex justify-between mb-2">
@@ -69,12 +69,7 @@ export const BorrowRecordDetail = ({ row }: { row: any }) => {
                         <p className={p_style}>{borrowRecord?.date_returned ? format(borrowRecord.date_returned as Date, "MMMM d, yyyy") : "Pending"} </p>
                     </div>
                 </div>
-                <div className="mb-2">
-                    <div>
-                        <p className="text-[0.6rem]">Fine:</p>
-                        <p className={p_style}> GHS {borrowRecord?.fine ? borrowRecord.fine : 0}</p>
-                    </div>
-                </div>
+               
 
                 <div className="mb-2">
                     <div>

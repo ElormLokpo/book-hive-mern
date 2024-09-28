@@ -8,7 +8,7 @@ import { toast } from "sonner"
 
 
 export const EditBook = ({ row }: { row: any }) => {
-    let input_style = "w-full border rounded text-xs px-1 py-1.5 outline-none text-gray-800"
+    let input_style = "w-full border border-stone-700 bg-stone-800 rounded text-xs px-1 py-1.5 outline-none text-gray-200"
     const [bookData, setBookData] = useState<IBookRequest>()
     const [UpdateBook, {isLoading}] = useUpdateBookMutation();
     useEffect(() => {
@@ -41,7 +41,7 @@ export const EditBook = ({ row }: { row: any }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="bg-white rounded p-3 w-[30rem]"
+            className="bg-black border border-stone-700 text-gray-200 rounded p-3 w-[30rem]"
             onClick={(e) => handleClickForm(e)}
         >
             <div className="flex justify-between mb-2">

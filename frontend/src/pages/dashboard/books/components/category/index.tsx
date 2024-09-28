@@ -48,14 +48,14 @@ export const AddCategories = ({setCategoriesArr}:{setCategoriesArr:(arr:string[]
             <div className="mb-2">
                 <label className="text-[0.6rem]">Categories:</label>
                 <div className="flex gap-2">
-                    <select className="w-full text-xs border outline-none rounded px-1 py-1.5 text-gray-700" onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setCurrentCategory(e.target.value)}>
+                    <select className="w-full bg-stone-800 border-stone-700 text-xs border outline-none rounded px-1 py-1.5 text-gray-200" onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setCurrentCategory(e.target.value)}>
                         {
                             Object.values(BookCategoryEnum).map((item, index) => <option key={index} value={item}>{item}</option>)
                         }
                     </select>
                     <div className="flex gap-1">
-                        <button onClick={handleAddCategory} className="border border-2 hover:bg-gray-50 border-gray-800 text-gray-800 rounded text-xs px-2"><IoIosAdd /></button>
-                        <button onClick={handleDone} className="bg-gray-800 hover:bg-gray-700 rounded text-xs px-2 text-white"><IoMdDoneAll /></button>
+                        <button onClick={handleAddCategory} className="border hover:bg-stone-600 border-stone-400 text-gray-200 rounded text-xs px-2"><IoIosAdd /></button>
+                        <button onClick={handleDone} className="bg-stone-800 hover:bg-stone-600 rounded text-xs px-2 text-white"><IoMdDoneAll /></button>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@ export const DisplayCategories = ({categories}:{categories:string[]}) => {
     return (
         <div className="grid grid-cols-4 gap-1">
             {
-                categories.map((item, index) => <p className="text-[0.6rem] border rounded-full px-2 flex items-center justify-center" key={index}>{item}</p>)
+                categories.map((item, index) => <p className="text-[0.6rem] text-stone-500 border border-stone-700 rounded-full px-2 flex items-center justify-center" key={index}>{item}</p>)
             }
 
         </div>

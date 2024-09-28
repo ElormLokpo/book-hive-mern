@@ -45,17 +45,17 @@ export const BookTable = ({ data }: IProps) => {
 
 
     let body = data.length > 0 ? (
-        data.map((item, index) => <tr onClick={() => handleRowClick(item)} className="hover:bg-gray-50 hover:cursor-pointer" key={index}>
-            <td className="py-3 px-2 border-b border-l">{item.title}</td>
-            <td className="py-3 px-2 border-b border-l">{item.author}</td>
-            <td className="py-3 px-2 border-b border-l">{item.isbn}</td>
-            <td className="py-3 px-2 border-b border-l">{item.location}</td>
-            <td className="py-3 px-2 border-b border-l">{item.total_copies}</td>
-            <td className="py-3 px-2 border-b border-l">{item.copies_borrowed ? item.copies_borrowed : 0}</td>
-            <td className="py-3 px-2 border-b border-l">{item.current_copies ? item.current_copies : 0}</td>
-            <td onClick={handlePreventPropagation} className="py-3 px-2 border-b border-l text-emerald-500 flex justify-between">{item.status}<button className="text-gray-800 underline" onClick={()=>handleInitiateBorrow(item)}>Initiate borrow</button></td>
-            <td className="py-3 px-2 border-b border-l"><DisplayCategories categories={item.categories} /></td>
-            <td onClick={handlePreventPropagation} className="py-3 px-2 border-b border-l"><EditDelete editModal={<EditBook row={item} />} deleteModal={<DeleteModal text={`Are you sure you want to delete ${item.title}`} deleteHandler={() => handleDeleteBook(item._id)} />} /></td>
+        data.map((item, index) => <tr onClick={() => handleRowClick(item)} className="hover:bg-stone-900 text-stone-300 hover:cursor-pointer" key={index}>
+            <td className="py-3.5 px-2 border-b border-stone-700">{item.title}</td>
+            <td className="py-3.5 px-2 border-b border-stone-700">{item.author}</td>
+            <td className="py-3.5 px-2 border-b border-stone-700">{item.isbn}</td>
+            <td className="py-3.5 px-2 border-b border-stone-700">{item.location}</td>
+            <td className="py-3.5 px-2 border-b border-stone-700">{item.total_copies}</td>
+            <td className="py-3.5 px-2 border-b border-stone-700">{item.copies_borrowed ? item.copies_borrowed : 0}</td>
+            <td className="py-3.5 px-2 border-b border-stone-700">{item.current_copies ? item.current_copies : 0}</td>
+            <td onClick={handlePreventPropagation} className="py-3.5 px-2 border-b border-stone-700 border-l text-emerald-500 flex justify-between">{item.status}<button className="text-stone-400 underline" onClick={()=>handleInitiateBorrow(item)}>Initiate borrow</button></td>
+            <td className="py-3.5 px-2 border-stone-700 border-b border-l"><DisplayCategories categories={item.categories} /></td>
+            <td onClick={handlePreventPropagation} className="py-3.5 px-2 border-b border-stone-700 border-l"><EditDelete editModal={<EditBook row={item} />} deleteModal={<DeleteModal text={`Are you sure you want to delete ${item.title}`} deleteHandler={() => handleDeleteBook(item._id)} />} /></td>
         </tr>)
     ) : (<tr>
         <td className="py-3 px-2 border-b border-l">No books to show.</td>
