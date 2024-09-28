@@ -50,7 +50,7 @@ export class BookController implements IController {
     private async GetAllBooks(req: Request, res: Response, next: NextFunction) {
         let total_documents = await BookModel.countDocuments();
 
-        let limit = 15;
+        let limit = 100;
         let total_number_pages = Math.ceil(total_documents / limit)
         let page = parseInt(req.params.page as string) || 1;
         let skip = limit * (page - 1)

@@ -14,7 +14,7 @@ export const DashboardLayout = () => {
                 <div className="col-span-2 border-r border-stone-700">
                     <SideNav />
                 </div>
-                <div className="col-span-14">
+                <div className="col-span-14 ">
                     <Outlet />
                 </div>
             </div>
