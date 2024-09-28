@@ -10,8 +10,8 @@ export const DashboardLayout = () => {
     return (
         <>
             {modal_state == true ? <Modal content={modal_content} /> : null}
-            <div className="h-full grid grid-cols-16">
-                <div className="col-span-2 border-r">
+            <div className="h-full bg-black text-stone-300 grid grid-cols-16">
+                <div className="col-span-2 border-r border-stone-700">
                     <SideNav />
                 </div>
                 <div className="col-span-14">

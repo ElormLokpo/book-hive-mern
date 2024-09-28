@@ -6,7 +6,7 @@ import { DisplayCategories } from "../category"
 
 
 export const BookDetail = ({row}:{row:any}) => {
-    let p_style = "w-full border rounded text-xs px-1 py-1 outline-none text-gray-800"
+    let p_style = "w-full border bg-stone-800 border-stone-700  rounded text-xs px-1 py-1 outline-none text-gray-200"
 
     const handleClickForm = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.stopPropagation()
@@ -18,7 +18,7 @@ export const BookDetail = ({row}:{row:any}) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="bg-white rounded p-3 w-[30rem]"
+            className="bg-black border text-gray-200 border-stone-700 rounded p-3 w-[30rem]"
             onClick={(e) => handleClickForm(e)}
         >
             <div className="flex justify-between mb-2">

@@ -7,8 +7,8 @@ import { IModalContext } from "@/context/modal-context/types";
 
 export const Button = ({ content, handler, style_type, icon, isLoading, loading_text }: IProps) => {
     let btn_style;
-    let def_style_sm = "text-xs border flex gap-1 items-center bg-gray-900 hover:bg-gray-700 text-white py-1.5 px-3 rounded"
-    let auth_style = "text-xs w-full flex justify-center items-center border flex gap-1 items-center bg-gray-900 hover:bg-gray-700 text-white py-2.5 px-3 rounded"
+    let def_style_sm = "text-xs border border-stone-700 flex gap-1 items-center bg-stone-800 hover:bg-stone-600 text-white py-1.5 px-3 rounded"
+    let auth_style = "text-xs w-full flex justify-center items-center border border-emerald-500 flex gap-1 items-center bg-emerald-500 hover:bg-emerald-600 text-white py-2.5 px-3 rounded"
    
     switch (style_type) {
         case "outline-sm":

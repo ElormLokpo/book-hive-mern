@@ -37,7 +37,7 @@ export const AuthPage = () => {
     return (
         <>
             <Toaster />
-            <div className="h-full flex flex-col items-center justify-between p-10">
+            <div className="h-full flex flex-col bg-black text-stone-300 items-center justify-between p-10">
                 <div className="p-2 w-[19rem] mt-[15rem]">
 
                     <p className="font-semibold">Sign In</p>

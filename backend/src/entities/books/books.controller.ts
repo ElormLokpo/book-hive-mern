@@ -36,6 +36,8 @@ export class BookController implements IController {
             next()
         }
 
+
+        req.body.current_copies = req.body.total_copies;
         let book_mutation = await BookModel.create(req.body as IBook);
 
         let response = GenerateResponse(true, `Book added successfully`, book_mutation)

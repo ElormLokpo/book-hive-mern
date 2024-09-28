@@ -49,7 +49,7 @@ export const AddBook = ({ triggerToast }: { triggerToast: (message: string) => v
             initial="initial"
             animate="animate"
             exit="exit"
-            className="bg-white rounded p-3 w-[30rem]"
+            className="bg-black border border-stone-600 text-gray-200 rounded p-3 w-[30rem]"
             onClick={(e) => handleClickForm(e)}
         >
             <div className="flex justify-between mb-2">

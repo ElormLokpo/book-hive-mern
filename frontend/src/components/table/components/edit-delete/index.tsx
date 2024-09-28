@@ -4,7 +4,7 @@ import { IProps } from "./types";
 import { ReactElement, useContext } from "react";
 import { ModalContext } from "@/context/modal-context";
 import { IModalContext } from "@/context/modal-context/types";
-import { DeleteModal } from "@/components/modal";
+
 
 export const EditDelete = ({editModal, deleteModal}:IProps)=>{
     const {SetModalContent, SetModalState} = useContext(ModalContext) as IModalContext
@@ -16,7 +16,7 @@ export const EditDelete = ({editModal, deleteModal}:IProps)=>{
 
     const handleDelete = ()=>{
         SetModalState(true);
-        SetModalContent(<DeleteModal />)
+        SetModalContent(deleteModal as ReactElement)
     }
 
     return(
