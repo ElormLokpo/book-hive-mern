@@ -58,7 +58,7 @@ export const BookTable = ({ data }: IProps) => {
             <td onClick={handlePreventPropagation} className="py-3.5 px-2 border-b border-stone-700 border-l"><EditDelete editModal={<EditBook row={item} />} deleteModal={<DeleteModal text={`Are you sure you want to delete ${item.title}`} deleteHandler={() => handleDeleteBook(item._id)} />} /></td>
         </tr>)
     ) : (<tr>
-        <td className="py-3 px-2 border-b border-l">No books to show.</td>
+        <td className="py-3 px-2 border-stone-700 border-b border-l">No books to show.</td>
     </tr>)
 
     return (

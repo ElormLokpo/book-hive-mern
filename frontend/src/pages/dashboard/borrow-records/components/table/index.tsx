@@ -56,7 +56,7 @@ export const BorrowRecordTable = ({ data }: { data: any[] }) => {
             <td onClick={handlePreventPropagation} className="py-3.5 px-2 border-b border-l border-stone-700"><EditDelete editModal={<EditBorrowRecord row={item} />}  deleteModal={<DeleteModal text="Are you sure you want to delete borrow record?" deleteHandler={()=>handleDelete(item._id)} />}/></td>
         </tr>)
     ) : (<tr>
-        <td className="py-3 px-2 border-b border-l">No borrow records to show.</td>
+        <td className="py-3 px-2 border-b border-stone-700 border-l">No borrow records to show.</td>
     </tr>)
 
     return (

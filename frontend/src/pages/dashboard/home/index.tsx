@@ -34,7 +34,7 @@ export const HomePage = () => {
                 <p className="font-semibold text-stone-300 mb-1">Top Books</p>
             </div>
             {isLoading ? <div><TableSkeleton /> </div> : <div>
-                {Array.isArray(data?.data) ? <BookTable data={data.data} /> : <p className="text-sm">Something went wrong. Kindly refresh page.</p>}
+                {Array.isArray(data?.data) ? <BookTable data={data.data.slice(0,5)} /> : <p className="text-sm">Something went wrong. Kindly refresh page.</p>}
             </div>}
 
 

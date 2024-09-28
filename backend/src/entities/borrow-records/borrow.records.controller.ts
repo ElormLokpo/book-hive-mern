@@ -57,7 +57,7 @@ export class BorrowRecordController implements IController {
     private async GetAllBorrowRecords(req: Request, res: Response, next: NextFunction) {
         let total_documents = await BorrowRecordModel.countDocuments();
 
-        let limit = 15;
+        let limit = 100;
         let total_number_pages = Math.ceil(total_documents / limit)
         let page = parseInt(req.params.page as string) || 1;
         let skip = limit * (page - 1)
