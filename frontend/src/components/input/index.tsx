@@ -1,7 +1,7 @@
 import { CiSearch } from "react-icons/ci";
 import { IProps } from "./types";
 
-export const Input = ({ label, placeholder, type, isError, style_type, name, inputChange }: IProps) => {
+export const Input = ({ label, placeholder, type, name, inputChange }: IProps) => {
     let input_style;
     let def_style_sm = "w-full border bg-stone-800 border-stone-700 rounded text-xs px-1 py-1.5 outline-none text-gray-200"
     input_style = def_style_sm

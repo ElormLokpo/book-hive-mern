@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
 import { RiBook3Fill } from "react-icons/ri";
 import { MdOutlineSpaceDashboard, MdPlaylistAddCheckCircle } from "react-icons/md";
-import { LuBookUp2 } from "react-icons/lu";
 import { HiOutlineLogout } from "react-icons/hi";
 import { HiClipboardDocumentList } from "react-icons/hi2";
 import { NavLink, useNavigate } from "react-router-dom";

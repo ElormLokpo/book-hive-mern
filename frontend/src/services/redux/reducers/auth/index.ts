@@ -14,7 +14,7 @@ export const AuthSlice = createSlice({
         storeCurrentUser : (state, action:PayloadAction)=>{
             state.value.current_user = action.payload
         },
-        logoutUser:(state, action)=>{
+        logoutUser:(state, _action)=>{
             state.value.current_user = undefined
         }
     }

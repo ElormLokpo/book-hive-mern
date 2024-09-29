@@ -1,7 +1,6 @@
 import { SlideInTop } from "@/animations"
 import { Button, ModalCloseButton } from "@/components/button"
 import { IBorrowRecordRequest } from "@/services/api-types/borrow.record.types"
-import { IUpdateRequest } from "@/services/api-types/response.types"
 import { useUpdateBorrowRecordMutation } from "@/services/api/borrow-record"
 import { format, parseISO } from "date-fns"
 import { motion as m } from "framer-motion"

@@ -2,7 +2,6 @@ import { Table } from "@/components/table"
 import { DisplayCategories } from "../category";
 import { EditDelete } from "@/components/table/components/edit-delete";
 import { EditBook } from "../edit-book";
-import { Pagination } from "@/components/pagination";
 import { useContext } from "react";
 import { ModalContext } from "@/context/modal-context";
 import { IModalContext } from "@/context/modal-context/types";
@@ -17,7 +16,7 @@ import { toast } from "sonner";
 export const BookTable = ({ data }: IProps) => {
     const tableHeaders: string[] = ["Book Title", "Author", "ISBN", "Location", "Total Copies", "Copies Borrowed", "Current Copies", "Status", "Categories", "Action"];
     const { SetModalContent, SetModalState } = useContext(ModalContext) as IModalContext
-    const [DeleteBook, { isLoading }] = useDeleteBookMutation();
+    const [DeleteBook] = useDeleteBookMutation();
 
     const handleRowClick = (item: any) => {
         SetModalState(true);

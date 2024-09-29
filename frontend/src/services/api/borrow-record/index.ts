@@ -10,7 +10,7 @@ export const BorrowRecordApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
         getAllBorrowRecords: builder.query<IResponse, undefined>({
-            queryFn: async (args, { dispatch }, _extraOptions, baseQuery) => {
+            queryFn: async (_args, { dispatch }, _extraOptions, baseQuery) => {
                 let response = await baseQuery({
                     url: "/borrow-records/all",
                     method: "GET",
