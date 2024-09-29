@@ -11,7 +11,7 @@ export const BookApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
         getAllBooks: builder.query<IResponse, undefined>({
-            queryFn: async (args, { dispatch }, _extraOptions, baseQuery) => {
+            queryFn: async (_args, { dispatch }, _extraOptions, baseQuery) => {
                 let response = await baseQuery({
                     url: "/books/all",
                     method: "GET",

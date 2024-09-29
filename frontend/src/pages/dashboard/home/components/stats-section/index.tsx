@@ -1,7 +1,7 @@
 import { useGetAllBooksQuery } from "@/services/api/book"
 import { ProgressBar } from "../progess-bar"
 import { useEffect, useState } from "react"
-import { da } from "date-fns/locale"
+
 
 const StateComponent = ({title}:{title:string}) => {
     let rand_num = Math.ceil(10 + Math.random() * 90)
@@ -14,7 +14,7 @@ const StateComponent = ({title}:{title:string}) => {
 }
 
 export const StatsSection = () => {
-    const {data, isLoading} = useGetAllBooksQuery(undefined)
+    const {data} = useGetAllBooksQuery(undefined)
     const [firstBookDataArr, setFirstBookDataArr] = useState<any[]>([])
     const [lastBookDataArr,setLastBookDataArr] = useState<any[]>([])
     useEffect(()=>{

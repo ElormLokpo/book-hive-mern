@@ -2,7 +2,6 @@ import { Table } from "@/components/table"
 
 import { EditDelete } from "@/components/table/components/edit-delete";
 import { EditBorrowRecord } from "../edit-borrow";
-import { Pagination } from "@/components/pagination";
 import { useContext } from "react";
 import { ModalContext } from "@/context/modal-context";
 import { IModalContext } from "@/context/modal-context/types";
@@ -17,7 +16,7 @@ import {toast} from "sonner"
 export const BorrowRecordTable = ({ data }: { data: any[] }) => {
     const tableHeaders: string[] = ["Book Title", "Borrower Fullname", "Borrower Phone Number", "Borrow Date", "Due Date", "Date Returned", "Status", "Action"];
     const { SetModalContent, SetModalState } = useContext(ModalContext) as IModalContext
-    const [DeleteBorrowRecord, {isLoading}] = useDeleteBorrowRecordMutation();
+    const [DeleteBorrowRecord] = useDeleteBorrowRecordMutation();
 
     const handleDelete = async(id:string)=>{
         let response = await DeleteBorrowRecord(id)

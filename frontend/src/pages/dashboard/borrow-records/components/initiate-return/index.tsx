@@ -4,7 +4,7 @@ import { motion as m } from "framer-motion"
 import { IBorrowRecordRequest } from "@/services/api-types/borrow.record.types"
 import { useState, useEffect } from "react"
 import { useUpdateBorrowRecordMutation } from "@/services/api/borrow-record"
-import { parseISO, format } from "date-fns"
+import { parseISO } from "date-fns"
 import { toast } from "sonner"
 
 export const InitiateReturnBook = ({ row }: { row: any }) => {

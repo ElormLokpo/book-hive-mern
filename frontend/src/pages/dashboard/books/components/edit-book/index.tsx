@@ -10,7 +10,7 @@ import { toast } from "sonner"
 export const EditBook = ({ row }: { row: any }) => {
     let input_style = "w-full border border-stone-700 bg-stone-800 rounded text-xs px-1 py-1.5 outline-none text-gray-200"
     const [bookData, setBookData] = useState<IBookRequest>()
-    const [UpdateBook, {isLoading}] = useUpdateBookMutation();
+    const [UpdateBook] = useUpdateBookMutation();
     useEffect(() => {
 
         setBookData(row as IBookRequest)
