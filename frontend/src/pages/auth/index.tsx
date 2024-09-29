@@ -52,33 +52,40 @@ export const AuthPage = () => {
                         <p className="text-[0.6rem] underline">Forgot password?</p>
                     </div>
 
-                    <div className="w-full">
+                    <div className="w-full mb-4">
                         <Button isLoading={isLoading} loading_text="Logging In..." style_type="auth" content="Login" handler={handleSubmit} />
                     </div>
 
+                    <div className="border border-stone-700 p-2 rounded">
+                        <div className="text-xs flex gap-4 justify-center">
+                            <p><span className="font-semibold">username: </span>admin</p>
+                            <p> <span className="font-semibold">password: </span>12345678</p>
+                        </div>
                 </div>
 
+            </div>
 
+
+            <div>
                 <div>
-                    <div>
-                        <div className="flex items-center gap-2 mb-2">
-                            <div>
-                                <div className="text-xs bg-gray-900 rounded p-2 text-white">
-                                    <RiBook3Fill />
-                                </div>
-                            </div>
-                            <div className="flex gap-1 item-center">
-                                <p className="font-semibold text-sm">Lbry-Mngmt</p>
-
+                    <div className="flex items-center gap-2 mb-2">
+                        <div>
+                            <div className="text-xs bg-gray-900 rounded p-2 text-white">
+                                <RiBook3Fill />
                             </div>
                         </div>
+                        <div className="flex gap-1 item-center">
+                            <p className="font-semibold text-sm">Lbry-Mngmt</p>
 
+                        </div>
                     </div>
-                    <div className="flex items-center justify-center">
-                        <p className="text-[0.6rem]">Github: ElormLokpo</p>
-                    </div>
+
+                </div>
+                <div className="flex items-center justify-center">
+                    <p className="text-[0.6rem]">Github: ElormLokpo</p>
                 </div>
             </div>
+        </div >
         </>
     )
 }

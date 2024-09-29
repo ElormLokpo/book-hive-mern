@@ -10,10 +10,12 @@ import { useGetAllBooksQuery } from "@/services/api/book";
 import { TableSkeleton } from "@/components/skeleton";
 import { toast } from "sonner";
 
+
 export const BookPage = () => {
     const { SetModalState, SetModalContent } = useContext(ModalContext) as IModalContext
-    const { data, isLoading } = useGetAllBooksQuery(undefined)
 
+    const { data, isLoading } = useGetAllBooksQuery(undefined)
+   
     const triggerToast = (message:string)=>{
         toast.success(message)
         location.reload()

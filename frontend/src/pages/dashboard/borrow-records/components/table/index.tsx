@@ -63,12 +63,7 @@ export const BorrowRecordTable = ({ data }: { data: any[] }) => {
         <div className="rounded">
             <Table headers={tableHeaders} body={body} />
 
-            <div className="flex items-end justify-end mt-2">
-                {
-                    data.length <= 15 ? null : <Pagination />
-                }
-
-            </div>
+          
         </div>
     )
 }
