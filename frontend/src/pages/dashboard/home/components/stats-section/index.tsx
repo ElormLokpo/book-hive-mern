@@ -22,7 +22,7 @@ export const StatsSection = () => {
             setFirstBookDataArr(data.data.slice(0,4))
             setLastBookDataArr(data.data.slice(-4))
         }
-        console.log(data)
+      
     },[data])
 
 

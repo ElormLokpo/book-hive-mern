@@ -4,7 +4,9 @@ import { MdOutlineSpaceDashboard, MdPlaylistAddCheckCircle } from "react-icons/m
 import { LuBookUp2 } from "react-icons/lu";
 import { HiOutlineLogout } from "react-icons/hi";
 import { HiClipboardDocumentList } from "react-icons/hi2";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "@/services/redux/reducers/auth";
 
 
 const SideNavItem = ({ icon, content, to }: { icon: ReactElement, content: string,to:string }) => {
@@ -12,6 +14,15 @@ const SideNavItem = ({ icon, content, to }: { icon: ReactElement, content: strin
 }
 
 export const SideNav = () => {
+    const dispatch = useDispatch()
+    let navigate = useNavigate();
+
+    const handleLogout = ()=>{
+        dispatch(logoutUser(undefined))
+        navigate("/admin/auth")
+    }
+
+
     return (
         <div className="p-2 bg-stone-900 text-stone-300 nav-fixed flex flex-col h-full justify-between">
             <div>
@@ -35,8 +46,8 @@ export const SideNav = () => {
                 </div>
             </div>
 
-            <div>
-                <button className="text-sm flex gap-2 items-center"><HiOutlineLogout /> Logout</button>
+            <div className="mb-4">
+                <button className="text-sm flex hover:bg-stone-600 gap-2 items-center" onClick={handleLogout}><HiOutlineLogout /> Logout</button>
             </div>
 
         </div>

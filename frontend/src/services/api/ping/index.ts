@@ -1,20 +1,24 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { baseUrl } from "@/constants";
+import { IAuthReduxState } from "@/services/api-types/auth.types";
 
 export const PingApi = createApi({
     reducerPath: "PingApi",
-    baseQuery: fetchBaseQuery({ baseUrl }),
+    baseQuery: fetchBaseQuery({
+        baseUrl,
+    }),
     endpoints: (builder) => ({
         ping: builder.query({
             queryFn: async (args, { dispatch }, _extraOptions, baseQuery) => {
                 let response = await baseQuery({
                     url: "/ping",
                     method: "GET",
-                    
+                   
                 })
 
+                console.log(args)
                 if (response.data) {
-                 
+                    console.log("Ping run")
                     console.log(response.data);
                     return { data: { success: true, message: "", data: response.data } }
 
@@ -24,6 +28,6 @@ export const PingApi = createApi({
             }
         })
     })
-}) 
+})
 
-export const {usePingQuery} = PingApi
+export const { usePingQuery } = PingApi

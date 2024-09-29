@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState:IAuthReduxState = {
     value:{
-        current_user: {}
+        current_user: undefined
     }
 }
 
@@ -13,10 +13,13 @@ export const AuthSlice = createSlice({
     reducers:{
         storeCurrentUser : (state, action:PayloadAction)=>{
             state.value.current_user = action.payload
+        },
+        logoutUser:(state, action)=>{
+            state.value.current_user = undefined
         }
     }
 })
 
 
-export const {storeCurrentUser} = AuthSlice.actions;
+export const {storeCurrentUser,logoutUser} = AuthSlice.actions;
 export default AuthSlice.reducer;

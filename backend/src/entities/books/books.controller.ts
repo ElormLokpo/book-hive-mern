@@ -15,7 +15,7 @@ export class BookController implements IController {
 
     private initializeRoutes() {
         this.router.get(`${this.path}/all`, this.GetAllBooks)
-        this.router.post(`${this.path}/add`, this.AddBook)
+        this.router.post(`${this.path}/add`,this.AddBook)
         this.router.patch(`${this.path}/update/:id`, this.UpdateBook);
         this.router.delete(`${this.path}/delete/:id`, this.DeleteBook);
     }

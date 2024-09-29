@@ -6,6 +6,7 @@ import { BorrowRecordModel } from "./borrow.records.model";
 import { BookModel } from "../books/books.model";
 import { v4 as uuidv4, validate, version } from 'uuid';
 
+
 export class BorrowRecordController implements IController {
     public path = "/borrow-records";
     public router = Router();
