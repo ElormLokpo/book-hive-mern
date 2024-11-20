@@ -13,9 +13,3 @@ This is a user-friendly web application designed to efficiently manage library b
 
 This application aims to simplify library operations and enhance user experience.
 
-### Screenshots
-
-![Screenshot 2024-09-28 231539](https://github.com/user-attachments/assets/c4a07ac9-c2ec-4dd0-8849-3dc2f26118db)
-
-
-![Screenshot 2024-09-28 231809](https://github.com/user-attachments/assets/977d502f-5680-49c0-a86d-726b008a235c)
